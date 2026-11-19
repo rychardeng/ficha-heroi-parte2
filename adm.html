@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área restrita aos ADMs do Esquadrão Sombra da Mata.">
+    <title>Área do ADM | Esquadrão Sombra da Mata</title>
+    <link rel="icon" href="imagens/emblema.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="index.html" class="logo">
+            <img class="logo-emblema" src="imagens/emblema.jpg" alt="Emblema do Esquadrão Sombra da Mata: escudo de metal com três marcas de garra douradas">
+            <div class="logo-texto">
+                <span class="logo-rotulo">Esquadrão Sombra da Mata</span>
+                <span class="logo-nome">Jaguaretê</span>
+            </div>
+        </a>
+
+        <a class="link-voltar" href="index.html"><i class="fa-solid fa-arrow-left"></i> Voltar<span class="link-voltar-extra"> à ficha</span></a>
+    </header>
+
+    <main class="pagina-alistamento pagina-adm" id="pagina-adm">
+
+        <section class="painel-entrar" id="painel-adm-entrar">
+            <p class="rotulo">Área restrita</p>
+            <h1 class="pagina-titulo">Área do ADM</h1>
+
+            <p class="aviso-restrito"><i class="fa-solid fa-lock"></i> Somente ADMs do esquadrão podem entrar aqui.</p>
+
+            <form class="form-entrar" id="form-adm" novalidate>
+                <p class="form-falha" id="adm-falha" role="alert">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span id="adm-falha-texto">Acesso restrito.</span>
+                </p>
+
+                <div class="campo">
+                    <label for="adm-email"><i class="fa-solid fa-envelope"></i> E-mail do ADM</label>
+                    <input id="adm-email" type="email" placeholder="nome@email.com" autocomplete="email">
+                    <span class="campo-erro"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="adm-senha"><i class="fa-solid fa-lock"></i> Senha</label>
+                    <input id="adm-senha" type="password" maxlength="30" placeholder="Senha do ADM" autocomplete="current-password">
+                    <span class="campo-erro"></span>
+                </div>
+
+                <button class="botao-form botao-largo" id="botao-adm-entrar" type="submit"><i class="fa-solid fa-user-shield"></i> Entrar como ADM</button>
+            </form>
+        </section>
+
+        <section class="painel-adm" id="painel-adm">
+            <div class="painel-adm-topo">
+                <div>
+                    <p class="rotulo">Área do ADM</p>
+                    <h1 class="pagina-titulo">Olá, <span id="adm-nome">comandante</span></h1>
+                    <p class="pagina-texto" id="adm-atualizado">Fichas de alistamento do esquadrão.</p>
+                </div>
+
+                <div class="painel-adm-botoes">
+                    <button class="botao-redefinir botao-sair" id="botao-adm-atualizar" type="button"><i class="fa-solid fa-rotate"></i> Atualizar</button>
+                    <button class="botao-redefinir botao-sair" id="botao-adm-sair" type="button"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+                </div>
+            </div>
+
+            <div class="resumo-fichas" id="resumo-fichas">
+                <button class="resumo-item ativo" type="button" data-filtro="todos"><strong id="total-todos">0</strong> Todas</button>
+                <button class="resumo-item resumo-analise" type="button" data-filtro="em_analise"><strong id="total-em_analise">0</strong> Em análise</button>
+                <button class="resumo-item resumo-aprovado" type="button" data-filtro="aprovado"><strong id="total-aprovado">0</strong> Aprovadas</button>
+                <button class="resumo-item resumo-recusado" type="button" data-filtro="recusado"><strong id="total-recusado">0</strong> Recusadas</button>
+            </div>
+
+            <div class="lista-fichas" id="lista-fichas"></div>
+
+            <p class="inventario-vazio" id="fichas-vazio">Nenhuma ficha neste filtro.</p>
+        </section>
+
+    </main>
+
+    <p class="aviso-salvo" id="aviso-salvo" role="status"><i class="fa-solid fa-circle-check"></i> <span id="aviso-salvo-texto">Decisão salva</span></p>
+
+    <button class="botao-tema" id="botao-tema" type="button" aria-label="Ativar modo claro"><i class="fa-solid fa-sun"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>

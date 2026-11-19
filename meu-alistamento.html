@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulte o resultado do seu alistamento no Esquadrão Sombra da Mata.">
+    <title>Meu alistamento | Esquadrão Sombra da Mata</title>
+    <link rel="icon" href="imagens/emblema.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="index.html" class="logo">
+            <img class="logo-emblema" src="imagens/emblema.jpg" alt="Emblema do Esquadrão Sombra da Mata: escudo de metal com três marcas de garra douradas">
+            <div class="logo-texto">
+                <span class="logo-rotulo">Esquadrão Sombra da Mata</span>
+                <span class="logo-nome">Jaguaretê</span>
+            </div>
+        </a>
+
+        <a class="link-voltar" href="index.html"><i class="fa-solid fa-arrow-left"></i> Voltar<span class="link-voltar-extra"> à ficha</span></a>
+    </header>
+
+    <main class="pagina-alistamento">
+
+        <section class="painel-entrar" id="painel-entrar">
+            <p class="rotulo">Área do recruta</p>
+            <h1 class="pagina-titulo">Meu alistamento</h1>
+            <p class="pagina-texto">Entre com o e-mail e a senha do seu alistamento para ver o seu crachá.</p>
+
+            <form class="form-entrar" id="form-entrar" novalidate>
+                <p class="form-falha" id="entrar-falha" role="alert">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span id="entrar-falha-texto">E-mail ou senha incorretos.</span>
+                </p>
+
+                <div class="campo">
+                    <label for="entrar-email"><i class="fa-solid fa-envelope"></i> E-mail</label>
+                    <input id="entrar-email" type="email" placeholder="nome@email.com" autocomplete="email">
+                    <span class="campo-erro"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="entrar-senha"><i class="fa-solid fa-lock"></i> Senha</label>
+                    <input id="entrar-senha" type="password" maxlength="10" placeholder="Sua senha" autocomplete="current-password">
+                    <span class="campo-erro"></span>
+                </div>
+
+                <button class="botao-form botao-largo" id="botao-entrar" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Consultar resultado</button>
+            </form>
+
+            <p class="pagina-rodape">Ainda não se alistou? <a href="index.html#contato">Envie seus dados</a>.</p>
+        </section>
+
+        <section class="painel-cracha" id="painel-cracha">
+            <p class="rotulo">Área do recruta</p>
+            <h1 class="pagina-titulo">Seu crachá</h1>
+
+            <article class="cracha" id="cracha">
+                <div class="cracha-topo">
+                    <img src="imagens/emblema.jpg" alt="">
+                    <div>
+                        <small>Esquadrão Sombra da Mata</small>
+                        <b id="cracha-tipo">Crachá de recruta</b>
+                    </div>
+                </div>
+
+                <div class="cracha-meio">
+                    <h2 id="cracha-nome">Recruta</h2>
+                    <p id="cracha-registro">Recruta · Ficha nº 0000</p>
+
+                    <div class="dado"><span>Nome</span><b id="cracha-dado-nome">-</b></div>
+                    <div class="dado"><span>E-mail</span><b id="cracha-dado-email">-</b></div>
+                    <div class="dado"><span>Enviado em</span><b id="cracha-dado-data">-</b></div>
+                </div>
+
+                <p class="cracha-faixa" id="cracha-faixa"><i class="fa-solid fa-hourglass-half"></i> Ficha em análise</p>
+            </article>
+
+            <div class="convocacao" id="convocacao">
+                <p class="convocacao-titulo"><i class="fa-solid fa-flag"></i> Convocação para a 2ª etapa</p>
+
+                <div class="dado"><span>Local</span><b>Quartel Sombra da Mata · Amazonas, Brasil</b></div>
+                <div class="dado"><span>Data</span><b>30 de novembro</b></div>
+                <div class="dado"><span>Horário</span><b>10h da manhã</b></div>
+                <div class="dado"><span>Levar</span><b>Todos os seus documentos</b></div>
+            </div>
+
+            <p class="pagina-texto cracha-explicacao" id="cracha-explicacao">O esquadrão está avaliando a sua ficha. Você receberá o resultado por e-mail e WhatsApp.</p>
+
+            <p class="cracha-atualizado" id="cracha-atualizado" aria-live="polite"></p>
+
+            <div class="cracha-botoes">
+                <button class="botao-redefinir botao-sair" id="botao-atualizar" type="button"><i class="fa-solid fa-rotate"></i> Atualizar resultado</button>
+                <button class="botao-redefinir botao-sair" id="botao-sair" type="button"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+            </div>
+        </section>
+
+    </main>
+
+    <button class="botao-tema" id="botao-tema" type="button" aria-label="Ativar modo claro"><i class="fa-solid fa-sun"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
